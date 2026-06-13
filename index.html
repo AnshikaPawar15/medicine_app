@@ -11,13 +11,14 @@
     <!-- NAV HEADER -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
+            <a href="#home" class="nav-logo">
                 <img src="assets/Logo.png" alt="MediCare Logo" class="logo-icon">
                 <span class="logo-text">MediCare</span>
-            </div>
+            </a>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#search" class="nav-link">Shop</a></li>
+                <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
                 <li><a href="#orders" class="nav-link">Orders</a></li>
                 <li><a href="#cart" class="nav-link cart-link">
                     🛒 Cart <span class="cart-count">0</span>
@@ -67,6 +68,13 @@
                     </div>
                 </div>
             </div>
+            
+            <section class="featured-medicines">
+                <h2>Featured Medicines</h2>
+                <div id="featuredGrid" class="medicines-grid">
+                    <!-- Featured medicines populated dynamically -->
+                </div>
+            </section>
         </section>
 
         <!-- SEARCH & BROWSE -->
@@ -95,6 +103,30 @@
                 <div class="medicines-grid" id="medicinesGrid">
                     <!-- Dynamically populated -->
                 </div>
+            </div>
+        </section>
+
+        <!-- DASHBOARD (iframe placeholder) -->
+        <section id="dashboard" class="page dashboard-page hidden">
+            <h2>Analytics Dashboard</h2>
+            <div class="dashboard-container" id="dashboardApp">
+                <div id="dashboardFilters" style="display:flex;gap:12px;align-items:center;margin-bottom:12px;flex-wrap:wrap;">
+                    <label>City: <select id="filterCity"><option value="">All</option></select></label>
+                    <label>Medicine: <select id="filterMedicine"><option value="">All</option></select></label>
+                    <label>Months: <select id="filterMonths" multiple size="3"></select></label>
+                    <label>Disease: <select id="filterDisease"><option value="">All</option></select></label>
+                    <label>Search: <input id="filterSearch" placeholder="Search medicine"></label>
+                    <button id="filterApply">Apply</button>
+                    <button id="filterReset">Reset</button>
+                </div>
+                <div id="kpis" style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;"></div>
+                <div id="dashboardTable" style="margin-bottom:16px;"></div>
+                <div id="barChart" style="margin-bottom:24px;"></div>
+                <div id="scatter3d" style="margin-bottom:24px; height:520px;"></div>
+                <div id="predictionChart" style="margin-bottom:24px;"></div>
+                <div id="heatmap" style="margin-bottom:24px;"></div>
+                <div id="animChart" style="margin-bottom:24px;"></div>
+                <div id="mapChart" style="margin-bottom:24px;"></div>
             </div>
         </section>
 
@@ -216,5 +248,8 @@
     </footer>
 
     <script src="assets/app.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="assets/dashboard.js"></script>
 </body>
 </html>

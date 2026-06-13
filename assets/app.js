@@ -63,6 +63,7 @@ const appStore = {
         cart = cart.filter(item => item.id !== medicineId);
         this.saveCart(cart);
         appUI.updateCartCount();
+        appUI.renderCart();
     },
 
     // Update cart item quantity
@@ -192,6 +193,52 @@ const appUI = {
         `;
     },
 
+    // Show a transient toast message
+    showToast(message = 'Added to cart') {
+        let toast = document.getElementById('toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'toast';
+            toast.className = 'toast hidden';
+            document.body.appendChild(toast);
+        }
+        toast.textContent = message;
+        toast.classList.remove('hidden');
+        toast.style.opacity = '1';
+        setTimeout(() => {
+            toast.classList.add('hidden');
+            toast.style.opacity = '';
+        }, 1800);
+    },
+
+    // Handle add-to-cart from grid buttons with button feedback
+    handleAddToCart(button, medicineId) {
+        try {
+            if (button) {
+                const orig = button.textContent;
+                button.disabled = true;
+                button.textContent = 'Added';
+                setTimeout(() => { button.disabled = false; button.textContent = orig; }, 1200);
+            }
+        } catch (e) { /* ignore */ }
+        appStore.addToCart(medicineId, 1);
+        this.showToast('Added to cart');
+    },
+
+    // Handle add-to-cart from detail page (uses qty input)
+    handleDetailAdd(button, medicineId) {
+        const qtyInput = document.getElementById('medicineQty');
+        const qty = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
+        if (button) {
+            const orig = button.textContent;
+            button.disabled = true;
+            button.textContent = 'Added';
+            setTimeout(() => { button.disabled = false; button.textContent = orig; }, 1200);
+        }
+        appStore.addToCart(medicineId, qty);
+        this.showToast('Added to cart');
+    },
+
     // Populate category filter
     populateCategoryFilter() {
         const categories = [...new Set(medicinesData.map(m => m.category))];
@@ -224,10 +271,51 @@ const appUI = {
                 <p class="medicine-dosage">${medicine.dosage}</p>
                 <p class="medicine-price">₹${medicine.price}</p>
                 ${stockBadge}
-                <button class="btn-add-cart" onclick="event.stopPropagation(); appStore.addToCart(${medicine.id}, 1)">Add to Cart</button>
+                <button class="btn-add-cart" onclick="event.stopPropagation(); appUI.handleAddToCart(this, ${medicine.id})">Add to Cart</button>
             `;
             grid.appendChild(card);
         });
+    },
+
+    // Render featured medicines (top 6 by stock)
+    renderFeaturedMedicines() {
+        const container = document.getElementById('featuredGrid');
+        if (!container) return;
+        const featured = medicinesData.slice().sort((a,b) => (b.stock||0) - (a.stock||0)).slice(0,6);
+        container.innerHTML = '';
+        featured.forEach(medicine => {
+            const card = document.createElement('div');
+            card.className = 'medicine-card';
+            card.onclick = () => appRouter.goToMedicineDetail(medicine.id);
+            const stockBadge = medicine.stock > 10 
+                ? `<span class="medicine-stock">${medicine.stock} in stock</span>`
+                : `<span class="medicine-stock low">Low stock</span>`;
+
+            card.innerHTML = `
+                <div class="medicine-image">💊</div>
+                <h3 class="medicine-name">${medicine.name}</h3>
+                <p class="medicine-dosage">${medicine.dosage}</p>
+                <p class="medicine-price">₹${medicine.price}</p>
+                ${stockBadge}
+                <button class="btn-add-cart" onclick="event.stopPropagation(); appUI.handleAddToCart(this, ${medicine.id})">Add to Cart</button>
+            `;
+            container.appendChild(card);
+        });
+    },
+
+    // Lazy-load Streamlit dashboard iframe or show instructions
+    loadStreamlitDashboard() {
+        if (window._streamlitLoaded) return;
+        const iframe = document.getElementById('streamlitFrame');
+        if (!iframe) return;
+        // If a global URL is provided, use it. Otherwise show a placeholder message.
+        if (window.STREAMLIT_URL && typeof window.STREAMLIT_URL === 'string' && window.STREAMLIT_URL.length > 5) {
+            iframe.src = window.STREAMLIT_URL;
+        } else {
+            const parent = iframe.parentElement;
+            parent.innerHTML = '<div class="placeholder-text">Dashboard not configured. Host the Streamlit app separately and set <strong>window.STREAMLIT_URL</strong> to the public URL to embed it here.</div>';
+        }
+        window._streamlitLoaded = true;
     },
 
     // Render medicine detail page
@@ -253,7 +341,7 @@ const appUI = {
                     <button class="qty-btn" onclick="this.previousElementSibling.value = parseInt(this.previousElementSibling.value) + 1">+</button>
                 </div>
 
-                <button class="btn-detail-add" onclick="appStore.addToCart(${medicine.id}, parseInt(document.getElementById('medicineQty').value))">
+                <button class="btn-detail-add" onclick="appUI.handleDetailAdd(this, ${medicine.id})">
                     Add to Cart
                 </button>
 
@@ -541,6 +629,8 @@ const appRouter = {
         switch (page) {
             case 'home':
                 document.getElementById('home').classList.remove('hidden');
+                // Render featured medicines on home
+                try { appUI.renderFeaturedMedicines(); } catch (e) { /* ignore */ }
                 break;
             case 'search':
                 document.getElementById('search').classList.remove('hidden');
@@ -569,6 +659,10 @@ const appRouter = {
             case 'order-tracking':
                 document.getElementById('order-tracking').classList.remove('hidden');
                 appUI.renderOrderTracking(param);
+                break;
+            case 'dashboard':
+                document.getElementById('dashboard').classList.remove('hidden');
+                appUI.loadStreamlitDashboard();
                 break;
             default:
                 window.location.hash = '#home';
