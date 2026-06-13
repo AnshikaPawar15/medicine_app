@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare – Online Medicine Store</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" href="assets/Logo.png" type="image/png">
+</head>
+<body>
+    <!-- NAV HEADER -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/Logo.png" alt="MediCare Logo" class="logo-icon">
+                <span class="logo-text">MediCare</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#search" class="nav-link">Shop</a></li>
+                <li><a href="#orders" class="nav-link">Orders</a></li>
+                <li><a href="#cart" class="nav-link cart-link">
+                    🛒 Cart <span class="cart-count">0</span>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="app-content">
+        <!-- HOME PAGE -->
+        <section id="home" class="page home-page">
+            <div class="hero-container">
+                <div class="hero-left">
+                    <h1>Find & Order Medicines<br>At Your Doorstep</h1>
+                    <p class="hero-subtitle">Fast, trusted, 100% authentic medicines delivered to you</p>
+                    
+                    <form class="search-box" onsubmit="window.appRouter.goToSearch(event)">
+                        <input type="text" id="homeSearch" placeholder="Search by medicine name..." class="search-input">
+                        <button type="submit" class="search-btn">Search</button>
+                    </form>
+
+                    <div class="category-chips">
+                        <button class="chip" data-category="Pain Relief">🩹 Pain Relief</button>
+                        <button class="chip" data-category="Antibiotic">💊 Antibiotic</button>
+                        <button class="chip" data-category="Vitamin">🥗 Vitamin</button>
+                        <button class="chip" data-category="Cold & Flu">🤧 Cold & Flu</button>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="order-preview-card">
+                        <h3>Quick Reorder</h3>
+                        <div id="recentOrders" class="recent-orders-list">
+                            <p class="placeholder-text">No recent orders</p>
+                        </div>
+                    </div>
+                    <div class="dashboard-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Pending Orders</span>
+                            <span class="stat-value" id="pendingOrderCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Total Saved</span>
+                            <span class="stat-value" id="cartItemCount">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEARCH & BROWSE -->
+        <section id="search" class="page search-page hidden">
+            <div class="search-header">
+                <h2>Browse Medicines</h2>
+                <input type="text" id="searchInput" placeholder="Search..." class="search-bar">
+            </div>
+
+            <div class="search-container">
+                <aside class="filter-sidebar">
+                    <h3>Filters</h3>
+                    <div class="filter-group">
+                        <label>Category</label>
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="">All Categories</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Price Range</label>
+                        <input type="range" id="priceFilter" min="0" max="500" value="500" class="filter-range">
+                        <span id="priceDisplay">₹0 - ₹500</span>
+                    </div>
+                </aside>
+
+                <div class="medicines-grid" id="medicinesGrid">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </section>
+
+        <!-- MEDICINE DETAIL -->
+        <section id="medicine-detail" class="page medicine-detail-page hidden">
+            <button class="back-btn" onclick="window.appRouter.goToSearch()">← Back to Search</button>
+            <div class="medicine-detail-container" id="medicineDetailContainer">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+
+        <!-- CART -->
+        <section id="cart" class="page cart-page hidden">
+            <h2>Your Cart</h2>
+            <div class="cart-container">
+                <div class="cart-items" id="cartItems">
+                    <p class="empty-cart">Your cart is empty. <a href="#search">Shop now</a></p>
+                </div>
+                <div class="cart-summary" id="cartSummary" style="display:none;">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">₹0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (5%):</span>
+                        <span id="tax">₹0</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">₹0</span>
+                    </div>
+                    <button class="btn-primary btn-full" onclick="window.appRouter.goToCheckout()">Proceed to Checkout</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHECKOUT -->
+        <section id="checkout" class="page checkout-page hidden">
+            <h2>Checkout</h2>
+            <div class="checkout-container">
+                <form id="checkoutForm" onsubmit="window.appStore.placeOrder(event)">
+                    <fieldset>
+                        <legend>Delivery Address</legend>
+                        <input type="text" placeholder="Full Name" id="fullName" required class="form-input">
+                        <input type="email" placeholder="Email" id="email" required class="form-input">
+                        <input type="tel" placeholder="Phone (+91-XXXXXXXXXX)" id="phone" required class="form-input">
+                        <input type="text" placeholder="Street Address" id="street" required class="form-input">
+                        <input type="text" placeholder="City" id="city" required class="form-input">
+                        <input type="text" placeholder="Pincode" id="pincode" required class="form-input">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Order Summary</legend>
+                        <div id="checkoutSummary"></div>
+                    </fieldset>
+
+                    <label class="checkbox">
+                        <input type="checkbox" id="disclaimerCheckbox" required>
+                        <span>I confirm I have consulted a pharmacist and understand the medicines & side effects</span>
+                    </label>
+
+                    <button type="submit" class="btn-primary btn-full">Place Order</button>
+                    <button type="button" class="btn-secondary btn-full" onclick="window.appRouter.goToCart()">Back to Cart</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ORDER CONFIRMATION -->
+        <section id="confirmation" class="page confirmation-page hidden">
+            <div class="confirmation-content">
+                <div class="success-icon">✓</div>
+                <h2>Order Placed Successfully!</h2>
+                <p id="confirmationMessage"></p>
+                <div class="confirmation-details" id="confirmationDetails"></div>
+                <button class="btn-primary" onclick="window.appRouter.goToOrders()">View All Orders</button>
+            </div>
+        </section>
+
+        <!-- ORDER HISTORY -->
+        <section id="orders" class="page orders-page hidden">
+            <h2>My Orders</h2>
+            <div class="orders-container" id="ordersContainer">
+                <p class="placeholder-text">No orders yet. <a href="#search">Shop now</a></p>
+            </div>
+        </section>
+
+        <!-- ORDER TRACKING DETAIL -->
+        <section id="order-tracking" class="page order-tracking-page hidden">
+            <button class="back-btn" onclick="window.appRouter.goToOrders()">← Back to Orders</button>
+            <div class="tracking-container" id="trackingContainer">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About MediCare</h4>
+                <p>Your trusted online medicine store. 100% authentic medicines delivered fast.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="https://www.pharmweb.net" target="_blank">PharmWeb India</a></li>
+                    <li><a href="https://medassure.in" target="_blank">MedAssure</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <p><small>Always consult a pharmacist. This is not a replacement for professional medical advice.</small></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MediCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>

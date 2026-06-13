@@ -1,0 +1,26 @@
+Month,Medicine,Disease,Sales,City,Lat,Lon
+Jan,Paracetamol,Fever,220,Pune,18.5204,73.8567
+Jan,Cough Syrup,Cold,180,Delhi,28.7041,77.1025
+Jan,Cetirizine,Allergy,140,Mumbai,19.0760,72.8777
+Jan,Antibiotic,Infection,160,Bangalore,12.9716,77.5946
+Feb,Paracetamol,Fever,240,Pune,18.5204,73.8567
+Feb,Cough Syrup,Cold,200,Delhi,28.7041,77.1025
+Feb,Cetirizine,Allergy,150,Mumbai,19.0760,72.8777
+Feb,Antibiotic,Infection,170,Bangalore,12.9716,77.5946
+Mar,Paracetamol,Fever,180,Pune,18.5204,73.8567
+Mar,Cough Syrup,Cold,150,Delhi,28.7041,77.1025
+Mar,Vitamin C,Immunity,160,Hyderabad,17.3850,78.4867
+Apr,Vitamin C,Immunity,200,Hyderabad,17.3850,78.4867
+Apr,Antibiotic,Infection,180,Chennai,13.0827,80.2707
+May,ORS,Dehydration,210,Ahmedabad,23.0225,72.5714
+May,Vitamin C,Immunity,190,Jaipur,26.9124,75.7873
+Jun,ORS,Dehydration,230,Ahmedabad,23.0225,72.5714
+Jun,Cough Syrup,Cold,170,Kolkata,22.5726,88.3639
+Jul,Cough Syrup,Cold,260,Delhi,28.7041,77.1025
+Jul,Paracetamol,Fever,250,Pune,18.5204,73.8567
+Aug,Cough Syrup,Cold,280,Delhi,28.7041,77.1025
+Aug,Paracetamol,Fever,260,Mumbai,19.0760,72.8777
+Sep,Cetirizine,Allergy,220,Bangalore,12.9716,77.5946
+Oct,Antibiotic,Infection,200,Chennai,13.0827,80.2707
+Nov,Paracetamol,Fever,240,Pune,18.5204,73.8567
+Dec,Cough Syrup,Cold,300,Delhi,28.7041,77.1025

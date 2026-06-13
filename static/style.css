@@ -1,0 +1,29 @@
+/* 🔹 General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🔹 Header */
+h1 {
+    text-align: center;
+    background-color: #2b7cff;
+    color: white;
+    padding: 15px;
+    margin: 0;
+}
+
+/* 🔹 Buttons */
+button {
+    background-color: #2b7cff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color:

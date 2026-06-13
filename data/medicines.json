@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "name": "Paracetamol",
+    "hindiName": "पैरासिटामोल",
+    "dosage": "500mg",
+    "manufacturer": "GlaxoSmithKline",
+    "category": "Pain Relief",
+    "price": 50,
+    "stock": 250,
+    "prescriptionRequired": false,
+    "usage": "Used to relieve mild to moderate pain and fever. Take 1 tablet every 4-6 hours as needed.",
+    "sideEffects": "Rare: nausea, allergic reactions, skin rash",
+    "warnings": "Do not exceed 4000mg per day. Avoid if you have liver disease or consume alcohol heavily.",
+    "contraindications": "Liver disease, severe alcohol abuse, hypersensitivity to paracetamol",
+    "dosageRecommendations": "Adults: 500-1000mg, 3-4 times daily. Children: consult pharmacist",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Ibuprofen",
+    "hindiName": "इबुप्रोफेन",
+    "dosage": "400mg",
+    "manufacturer": "Cipla",
+    "category": "Pain Relief",
+    "price": 60,
+    "stock": 180,
+    "prescriptionRequired": false,
+    "usage": "Anti-inflammatory pain reliever for headaches, muscle pain, and fever.",
+    "sideEffects": "GI upset, dizziness, headache",
+    "warnings": "Take with food. Do not use if allergic to NSAIDs. May increase risk of heart disease.",
+    "contraindications": "Heart disease, stomach ulcers, kidney disease, hypertension",
+    "dosageRecommendations": "Adults: 200-400mg every 4-6 hours. Max 1200mg/day",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Aspirin",
+    "hindiName": "एस्पिरिन",
+    "dosage": "500mg",
+    "manufacturer": "Bayer",
+    "category": "Pain Relief",
+    "price": 40,
+    "stock": 300,
+    "prescriptionRequired": false,
+    "usage": "Pain reliever and blood thinner. Used for minor pain, fever, and heart health.",
+    "sideEffects": "Stomach irritation, bleeding, allergic reactions",
+    "warnings": "Take with water or food. Not for children under 12 without doctor consent.",
+    "contraindications": "Bleeding disorders, peptic ulcers, asthma, dengue",
+    "dosageRecommendations": "Adults: 300-600mg every 4-6 hours. Max 3000mg/day",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Amoxicillin",
+    "hindiName": "एमोक्सिसिलिन",
+    "dosage": "500mg",
+    "manufacturer": "Alembic",
+    "category": "Antibiotic",
+    "price": 120,
+    "stock": 90,
+    "prescriptionRequired": true,
+    "usage": "Antibiotic for bacterial infections like ear, throat, and skin infections.",
+    "sideEffects": "Diarrhea, nausea, allergic reaction, rash",
+    "warnings": "Complete the full course. May reduce effectiveness of oral contraceptives.",
+    "contraindications": "Penicillin allergy, mononucleosis, severe kidney disease",
+    "dosageRecommendations": "Adults: 250-500mg three times daily for 7-10 days",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Azithromycin",
+    "hindiName": "एज़िथ्रोमाइसिन",
+    "dosage": "500mg",
+    "manufacturer": "Dr. Reddy's",
+    "category": "Antibiotic",
+    "price": 150,
+    "stock": 75,
+    "prescriptionRequired": true,
+    "usage": "Broad-spectrum antibiotic for respiratory, skin, and soft tissue infections.",
+    "sideEffects": "Nausea, diarrhea, abdominal pain, headache",
+    "warnings": "Do not use if allergic to macrolides. May cause QT prolongation.",
+    "contraindications": "Macrolide allergy, liver disease, QT prolongation risk",
+    "dosageRecommendations": "Adults: 500mg on day 1, then 250mg daily for 4 days",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Cetirizine",
+    "hindiName": "सेटीरिज़ाइन",
+    "dosage": "10mg",
+    "manufacturer": "Sun Pharma",
+    "category": "Cold & Flu",
+    "price": 20,
+    "stock": 500,
+    "prescriptionRequired": false,
+    "usage": "Antihistamine for allergies, hay fever, and itching.",
+    "sideEffects": "Drowsiness, dry mouth, headache",
+    "warnings": "May cause drowsiness; avoid driving. Take with or without food.",
+    "contraindications": "Kidney disease, liver disease, hypersensitivity to cetirizine",
+    "dosageRecommendations": "Adults: 10mg once daily in the evening",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Crocin",
+    "hindiName": "क्रोसिन",
+    "dosage": "500mg",
+    "manufacturer": "Abbott",
+    "category": "Pain Relief",
+    "price": 30,
+    "stock": 400,
+    "prescriptionRequired": false,
+    "usage": "Pain and fever reliever. Used for headaches, body aches, and common cold.",
+    "sideEffects": "Rare allergic reactions, skin rash",
+    "warnings": "Do not exceed recommended dose. Avoid if pregnant without doctor consent.",
+    "contraindications": "Liver disease, alcohol abuse, paracetamol allergy",
+    "dosageRecommendations": "Adults: 1-2 tablets every 4-6 hours. Max 3 tablets/day",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Dolo 650",
+    "hindiName": "डोलो 650",
+    "dosage": "650mg",
+    "manufacturer": "Micro Labs",
+    "category": "Pain Relief",
+    "price": 35,
+    "stock": 350,
+    "prescriptionRequired": false,
+    "usage": "Extended-relief pain and fever medication for moderate pain.",
+    "sideEffects": "Nausea, dizziness, allergic reactions",
+    "warnings": "Take with milk or food. Do not break or crush tablet.",
+    "contraindications": "Liver disease, kidney disease, alcohol abuse",
+    "dosageRecommendations": "Adults: 1 tablet every 6-8 hours. Max 2 tablets/day",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Metformin",
+    "hindiName": "मेटफॉर्मिन",
+    "dosage": "500mg",
+    "manufacturer": "Lupin",
+    "category": "Diabetes",
+    "price": 80,
+    "stock": 200,
+    "prescriptionRequired": true,
+    "usage": "Diabetes medication to control blood sugar levels.",
+    "sideEffects": "Stomach upset, metallic taste, diarrhea, B12 deficiency",
+    "warnings": "Monitor kidney function. Avoid during acute illness or surgery.",
+    "contraindications": "Severe kidney disease, liver disease, heart failure, contrast dye allergy",
+    "dosageRecommendations": "Adults: 500-1000mg twice daily with meals",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Atorvastatin",
+    "hindiName": "एटोरवास्टेटिन",
+    "dosage": "10mg",
+    "manufacturer": "Ranbaxy",
+    "category": "Heart & Cholesterol",
+    "price": 90,
+    "stock": 150,
+    "prescriptionRequired": true,
+    "usage": "Cholesterol-lowering statin for heart disease prevention.",
+    "sideEffects": "Muscle pain, liver damage, high blood sugar",
+    "warnings": "Regular liver function tests recommended. Avoid grapefruit juice.",
+    "contraindications": "Pregnancy, active liver disease, high liver enzymes",
+    "dosageRecommendations": "Adults: 10-80mg once daily in the evening",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Vitamin C",
+    "hindiName": "विटामिन सी",
+    "dosage": "500mg",
+    "manufacturer": "Now Foods",
+    "category": "Vitamin",
+    "price": 40,
+    "stock": 400,
+    "prescriptionRequired": false,
+    "usage": "Immune system booster for cold prevention and wound healing.",
+    "sideEffects": "GI upset, kidney stones (high doses), diarrhea",
+    "warnings": "Do not exceed 2000mg/day. May interfere with certain blood tests.",
+    "contraindications": "Kidney stones, glucose-6-phosphate deficiency, iron overload",
+    "dosageRecommendations": "Adults: 500-2000mg daily",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Vitamin D3",
+    "hindiName": "विटामिन डी3",
+    "dosage": "1000 IU",
+    "manufacturer": "Organic Labs",
+    "category": "Vitamin",
+    "price": 60,
+    "stock": 220,
+    "prescriptionRequired": false,
+    "usage": "Bone health, calcium absorption, and immune function.",
+    "sideEffects": "Hypercalcemia (high doses), nausea, kidney stones",
+    "warnings": "Monitor calcium levels if taking high doses. Limit sun exposure not needed.",
+    "contraindications": "Hypercalcemia, vitamin D toxicity, sarcoidosis",
+    "dosageRecommendations": "Adults: 1000-4000 IU daily",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Iron Tablets",
+    "hindiName": "आयरन की गोलियां",
+    "dosage": "325mg",
+    "manufacturer": "Ferrous Labs",
+    "category": "Vitamin",
+    "price": 50,
+    "stock": 180,
+    "prescriptionRequired": false,
+    "usage": "Treats iron deficiency anemia and improves oxygen transport.",
+    "sideEffects": "Constipation, dark stools, nausea, abdominal discomfort",
+    "warnings": "Take on empty stomach or with orange juice. Store away from children.",
+    "contraindications": "Hemochromatosis, thalassemia, sickle cell disease",
+    "dosageRecommendations": "Adults: 325mg once or twice daily",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Zinc Tablets",
+    "hindiName": "जस्ता की गोलियां",
+    "dosage": "15mg",
+    "manufacturer": "Wellness Labs",
+    "category": "Vitamin",
+    "price": 45,
+    "stock": 250,
+    "prescriptionRequired": false,
+    "usage": "Immune system support and wound healing.",
+    "sideEffects": "Nausea, copper deficiency (long-term), metallic taste",
+    "warnings": "Do not exceed 40mg/day. Not for long-term use without monitoring.",
+    "contraindications": "Copper deficiency, certain infections",
+    "dosageRecommendations": "Adults: 15-30mg daily",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 15,
+    "name": "ORS",
+    "hindiName": "ओआरएस",
+    "dosage": "Powder (1L pack)",
+    "manufacturer": "WHO Approved",
+    "category": "Cold & Flu",
+    "price": 20,
+    "stock": 600,
+    "prescriptionRequired": false,
+    "usage": "Oral rehydration solution for diarrhea, vomiting, and dehydration.",
+    "sideEffects": "Rare: hypernatremia if overdosed",
+    "warnings": "Mix with clean water. Use within 24 hours after mixing.",
+    "contraindications": "Severe dehydration (needs IV), unconsciousness",
+    "dosageRecommendations": "Sip small amounts frequently or as directed by doctor",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Antacid",
+    "hindiName": "एंटासिड",
+    "dosage": "400mg (Calcium Carbonate)",
+    "manufacturer": "Ranbaxy",
+    "category": "Digestive",
+    "price": 25,
+    "stock": 350,
+    "prescriptionRequired": false,
+    "usage": "Relieves acidity, heartburn, and indigestion.",
+    "sideEffects": "Constipation, chalky taste, calcium deposits",
+    "warnings": "Do not use for prolonged periods. Take separately from other medicines.",
+    "contraindications": "Kidney disease, high calcium levels",
+    "dosageRecommendations": "Adults: 1-2 tablets as needed. Max 7-8 tablets/day",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Pantoprazole",
+    "hindiName": "पैंटोप्राज़ोल",
+    "dosage": "40mg",
+    "manufacturer": "Cipla",
+    "category": "Digestive",
+    "price": 70,
+    "stock": 120,
+    "prescriptionRequired": true,
+    "usage": "Reduces stomach acid for GERD, ulcers, and acid reflux.",
+    "sideEffects": "Headache, nausea, diarrhea, vitamin B12 deficiency",
+    "warnings": "Take 30 minutes before food. Long-term use may affect calcium absorption.",
+    "contraindications": "Severe liver disease, vitamin B12 deficiency",
+    "dosageRecommendations": "Adults: 40mg once daily for 4-8 weeks",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Omeprazole",
+    "hindiName": "ओमेप्राज़ोल",
+    "dosage": "20mg",
+    "manufacturer": "Sun Pharma",
+    "category": "Digestive",
+    "price": 75,
+    "stock": 140,
+    "prescriptionRequired": true,
+    "usage": "Proton pump inhibitor for severe acid reflux and ulcer treatment.",
+    "sideEffects": "Diarrhea, constipation, nausea, headache",
+    "warnings": "May mask symptoms of stomach cancer. Not for long-term self-use.",
+    "contraindications": "Severe liver disease, suspected gastric malignancy",
+    "dosageRecommendations": "Adults: 20-40mg once daily for 2-4 weeks",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Losartan",
+    "hindiName": "लोसार्टन",
+    "dosage": "50mg",
+    "manufacturer": "Merck",
+    "category": "Heart & Cholesterol",
+    "price": 110,
+    "stock": 95,
+    "prescriptionRequired": true,
+    "usage": "Blood pressure reducer for hypertension management.",
+    "sideEffects": "Dizziness, fatigue, cough, high potassium levels",
+    "warnings": "Monitor kidney function and potassium levels. Avoid NSAIDs.",
+    "contraindications": "Pregnancy, kidney disease, potassium deficiency",
+    "dosageRecommendations": "Adults: 50mg once daily",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Amlodipine",
+    "hindiName": "एमलोडिपाइन",
+    "dosage": "5mg",
+    "manufacturer": "Pfizer",
+    "category": "Heart & Cholesterol",
+    "price": 95,
+    "stock": 170,
+    "prescriptionRequired": true,
+    "usage": "Calcium channel blocker for blood pressure and angina management.",
+    "sideEffects": "Headache, flushing, ankle swelling, dizziness",
+    "warnings": "Avoid grapefruit juice. May take 2-3 weeks to show full effect.",
+    "contraindications": "Severe aortic stenosis, cardiogenic shock",
+    "dosageRecommendations": "Adults: 5-10mg once daily",
+    "indianLinks": [
+      {"title": "PharmWeb India", "url": "https://www.pharmweb.net"},
+      {"title": "MedAssure", "url": "https://medassure.in"}
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medicine Shop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Online Medicine Shop 💊</h1>
+
+<!-- 🔐 Login/Register -->
+<a href="/login"><button>Login 🔐</button></a>
+<a href="/register"><button>Register 📝</button></a>
+
+<br><br>
+
+<!-- 🔍 Search -->
+<form method="GET" action="/">
+    <input type="text" name="search" placeholder="Search medicine...">
+    <button type="submit">Search</button>
+</form>
+
+<br>
+
+<a href="/cart">View Cart 🛒</a>
+
+<hr>
+
+<!-- 💊 Medicines -->
+{% for med in medicines %}
+    <div>
+        <h3>{{ med.name }}</h3>
+        <p>Price: ₹{{ med.price }}</p>
+        <a href="/add/{{ med.id }}">
+            <button>Add to Cart</button>
+        </a>
+    </div>
+    <hr>
+{% endfor %}
+
+</body>
+</html>
